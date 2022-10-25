@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin:0;
+  }
+  
+  .wrapper {
+    background: darkcyan;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  button {
+    height: 100px;
+    width: 100px;
+    font-size: 48px;
+    border-radius: 30px;
+    cursor: pointer;
+    
+  }
+  .wrapper#YS{
+    align-items: left;
+    justify-content: left;
+  }
+  .resultContainer {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .score{
+    font-size: 33px;
+    color: black;
+    padding-top:10px
+  }
+  #result{
+    font-size: 40px;
+    color: #ff0088;
+  }
