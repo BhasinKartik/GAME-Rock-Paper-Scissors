@@ -111,6 +111,12 @@ function playGame(){
   // 2. Add a 'click' event listener to each button
   // 3. Call the onClickRPS function every time someone clicks
   // 4. Make sure to pass the currently selected rps button as an argument
+  let gap=()=>{
+    cc.innerText=computerChoice;
+    let score=getResult(playerChoice,computerChoice);
+
+    showResult(score, playerChoice, computerChoice);
+  }
   let clickChoice=document.querySelectorAll('.rpsButton');
 // console.log(clickChoice);
   clickChoice.forEach(choice=>{
@@ -120,9 +126,11 @@ function playGame(){
       pc.innerText=choice.value;
       audioTurn.play();
       computerChoice= getComputerChoice(choices);
-      cc.innerText=computerChoice;
-      let score=getResult(playerChoice,computerChoice);
-      showResult(score, playerChoice, computerChoice);
+
+      setTimeout(gap,500);
+    let score=getResult(playerChoice,computerChoice);
+     
+     
       Count(score);
       if(x.innerText.length==5){
         console.log("gameOver");
