@@ -70,8 +70,8 @@ result.innerText = 'You Lose!'
 // let r=getResult('🤚', '✌');
 // console.log(showResult(r,'✌', '🤚'));
 let p=document.getElementById('pc');
-  YS.innerText="";
-   CS.innerText="";
+  // YS.innerText="";
+  //  CS.innerText="";
   
 let countWins={
   YS:0,
@@ -86,10 +86,11 @@ let Count=(getResult)=>{
   if(getResult==-1){
     CS.innerText+="✅";
     YS.innerText+="❌";
-    
-  
-  
   }
+  if(YS.innerText.length==5){
+    setTimeout(endGame,1500);
+  }
+  
 }
 // ** Calculate who won and show it on the screen **
 function onClickRPS() {
@@ -101,6 +102,16 @@ function onClickRPS() {
 onClickRPS();
 // ** Make the RPS buttons actively listen for a click and do something once a click is detected **
 let audioTurn=new Audio("menuselect4-36147.mp3")
+let x=document.getElementById('YS');
+let removeScores=()=>{
+  YS.innerText=" ";
+  CS.innerText=" ";
+  
+}
+let startAgain=()=>{
+  result.innerText="START!"
+}
+
 
 function playGame(){
   // use querySelector to select all RPS Buttons
@@ -123,6 +134,7 @@ Count(score);
     result.innerText=" ";
     
   }
+  
   let clickChoice=document.querySelectorAll('.rpsButton');
 // console.log(clickChoice);
   clickChoice.forEach(choice=>{
@@ -132,19 +144,14 @@ Count(score);
       pc.innerText=choice.value;
       audioTurn.play();
       computerChoice= getComputerChoice(choices);
-
+     
       setTimeout(gap,500);
-      setTimeout(aftergap,1900);
+      setTimeout(aftergap,1350);
       
     let score=getResult(playerChoice,computerChoice);
      
      
-      if(x.innerText.length==5){
-        console.log("gameOver");
-        endGame();
-        
-        
-      }
+      
       // x.innerText.length=0;
         
       
@@ -167,24 +174,9 @@ pc.innerText=" ";
   cc.innerText=" ";
   
   result.innerText=" GAME-OVER !";
-  setTimeout(startAgain,2000);
-  setTimeout(removeScores,1000);
-  
-  
-
-      
-  
+  setTimeout(startAgain,1500);
+removeScores();
   
 
 }
-let x=document.getElementById('YS');
-let removeScores=()=>{
-  YS.innerText=" ";
-  CS.innerText=" ";
-  
-}
-let startAgain=()=>{
-  result.innerText="START!"
-}
-
-playGame()
+playGame();
