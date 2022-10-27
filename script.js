@@ -88,7 +88,7 @@ let Count=(getResult)=>{
     YS.innerText+="❌";
   }
   if(YS.innerText.length==5){
-    setTimeout(endGame,1500);
+    setTimeout(endGame,1100);
   }
   
 }
