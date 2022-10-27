@@ -117,6 +117,11 @@ function playGame(){
 
     showResult(score, playerChoice, computerChoice);
   }
+  let aftergap=()=>{
+    cc.innerText=" ";
+    pc.innerText=" ";
+    result.innerText=" ";
+  }
   let clickChoice=document.querySelectorAll('.rpsButton');
 // console.log(clickChoice);
   clickChoice.forEach(choice=>{
@@ -128,6 +133,8 @@ function playGame(){
       computerChoice= getComputerChoice(choices);
 
       setTimeout(gap,500);
+      setTimeout(aftergap,1900);
+      
     let score=getResult(playerChoice,computerChoice);
      
      
