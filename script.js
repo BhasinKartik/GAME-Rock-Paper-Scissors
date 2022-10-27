@@ -114,13 +114,14 @@ function playGame(){
   let gap=()=>{
     cc.innerText=computerChoice;
     let score=getResult(playerChoice,computerChoice);
-
+Count(score);
     showResult(score, playerChoice, computerChoice);
   }
   let aftergap=()=>{
     cc.innerText=" ";
     pc.innerText=" ";
     result.innerText=" ";
+    
   }
   let clickChoice=document.querySelectorAll('.rpsButton');
 // console.log(clickChoice);
@@ -138,7 +139,6 @@ function playGame(){
     let score=getResult(playerChoice,computerChoice);
      
      
-      Count(score);
       if(x.innerText.length==5){
         console.log("gameOver");
         endGame();
